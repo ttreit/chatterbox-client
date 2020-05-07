@@ -9,8 +9,8 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    
-    console.log('click!');
+    Messages.text = $('#message').val() || Messages.text;
+    Parse.create(Messages);
   },
 
   setStatus: function(active) {
@@ -19,3 +19,4 @@ var FormView = {
   }
 
 };
+
