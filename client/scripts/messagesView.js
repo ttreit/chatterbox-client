@@ -1,8 +1,10 @@
 var MessagesView = {
 
   $chats: $('#chats'),
+  $refresh: $('.refresh'),
 
   initialize: function() {
+    MessagesView.$refresh.on('click', MessagesView.refresh);
   },
 
   render: function(results) {
@@ -24,6 +26,10 @@ var MessagesView = {
 
   renderMessage: function(message) {
     this.$chats.append(MessageView.render(message));
-  }
+  },
 
+  refresh: function(event) {
+    MessagesView.$chats.empty();
+    App.fetch();
+  }
 };

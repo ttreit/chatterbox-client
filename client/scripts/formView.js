@@ -11,7 +11,9 @@ var FormView = {
     event.preventDefault();
     Messages.text = $('#message').val() || Messages.text;
     Parse.create(Messages);
+    $('#chats').empty();
     App.fetch();
+    $('#message').val('');
   },
 
   setStatus: function(active) {
