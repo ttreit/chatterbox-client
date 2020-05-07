@@ -16,7 +16,7 @@
         if (search[search.length - 1] !== '?') {
           search += '&';
         }
-        search += 'username=' + (prompt('What is your name?') || 'anonymous');
+        search += 'username=' + (prompt('What is your name?') || 'Anonymous');
         window.location.search = search;
       }
     </script>
