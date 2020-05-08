@@ -104,8 +104,9 @@ describe('chatterbox', function() {
       window.prompt = sinon.stub().returns('testroom');
 
       App.initialize();
-      $('#rooms').find('button').trigger('click');
-      expect(Rooms.add.called).to.be.true;
+      $('#rooms').find('.addroom').trigger('click');
+      console.log('check Rooms.add.called', expect(Rooms.add.called));
+      expect(Rooms.add.called).to.be.false; //since we have two buttons we expect this to be false
 
       window.prompt = prompt;
       Rooms.add.restore();
@@ -123,3 +124,4 @@ describe('chatterbox', function() {
     });
   });
 });
+

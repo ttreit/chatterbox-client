@@ -8,9 +8,12 @@ var MessagesView = {
   },
 
   render: function(results) {
-    debugger;
+
     results.forEach(messageObj => {
-      if (messageObj.username === '%20' || messageObj.username === undefined) {
+      if (/^%20/g.test(messageObj.username)) {
+        messageObj.username = 'Anonymous';
+      }
+      if (messageObj.username === undefined) {
         messageObj.username = 'Anonymous';
       }
       if (/%20/.test(messageObj.username)) {
@@ -25,7 +28,7 @@ var MessagesView = {
   },
 
   renderMessage: function(message) {
-    this.$chats.append(MessageView.render(message));
+    this.$chats.append(MessageView.render(message)); // ({key: val})
   },
 
   refresh: function(event) {

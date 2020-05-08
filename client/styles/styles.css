@@ -91,7 +91,15 @@ form input[type=text] {
     background-color: #eee;
 }
 
+.text {
+    margin: 5px 5px;
+    font-size: 15px;
+    padding: 12px;
+    background-color: rgba(213, 221, 164, 0.4)
+}
+
 .chat .username {
+    margin: 3px 5px;
     font-weight: 800;
 }
 
