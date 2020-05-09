@@ -19,6 +19,22 @@ var Parse = {
     });
   },
 
+  createRoom: function(room, successCB, errorCB = null) {
+    $.ajax({
+      url: Parse.server,
+      type: 'POST',
+      data: JSON.stringify(room),
+      contentType: 'application/json',
+      success: successCB || function (data) {
+        console.log('chatterbox: Room created');
+      },
+      error: errorCB || function (data) {
+        // See: https://developer.mozilla.org/en-US/docs/Web/API/console.error
+        console.error('chatterbox: Failed to create room', data);
+      }
+    });
+  },
+
   readAll: function(successCB, errorCB = null) {
     $.ajax({
       url: Parse.server,

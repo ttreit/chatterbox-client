@@ -9,6 +9,7 @@ var RoomsView = {
     RoomsView.$addroom.on('click', Rooms.add);
     //RoomsView.$button.on('click', Rooms.add);
 
+
   },
 
   render: function(results) {
@@ -54,6 +55,3 @@ var RoomsView = {
 
 };
 
-
-/// ('    All Channels        ') ;  'All Channels'
-/// ('
