@@ -10,10 +10,7 @@ var Rooms = {
       RoomsView.$select.prepend(`<option selected>${Rooms.userRoom}</option>`);
       Messages.roomname = Rooms.userRoom;
       MessagesView.$chats.empty();
-      console.log(Messages, '---before');
-      // post the created new room to the server
       Parse.create(Messages);
-      console.log(Messages, 'after');
       App.fetchRoom();
     }
   },

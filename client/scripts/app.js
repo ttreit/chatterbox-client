@@ -32,9 +32,9 @@ var App = {
 
   fetchRoom: function() {
     Parse.readAll((data) => {
+      debugger;
       // examine the response from the server request:
       console.log('fetchRoom', data.results); //Array(15)
-      debugger;
       Rooms.addUserRoom(data.results);
       console.log('after addUserRoom');
     });

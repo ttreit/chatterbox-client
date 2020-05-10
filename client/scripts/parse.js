@@ -41,7 +41,7 @@ var Parse = {
       type: 'GET',
       data: {
         order: '-createdAt',
-        limit: 15
+        limit: 75
       },
       contentType: 'application/json',
       success: successCB,
